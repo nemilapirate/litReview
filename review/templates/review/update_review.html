@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <div>
+        <h1 class="content_modify" >Modifier une critique </h1>
+            <h2 class="title2">Article</h2>
+            {% include 'flux/ticket_view.html' %}
+            <form method="post"  enctype="multipart/form-data">
+                {% csrf_token %}
+                {% form_review%}
+            <h2 class="title2">Critique</h2>
+                {% form_review %}
+                <button class="btn_valid" type="submit">Envoyer</button>
+            </form>
+        </div>
+{% endblock %}

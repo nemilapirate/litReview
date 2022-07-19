@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="content_text_delete">
+        <form method="post">
+            {% csrf_token %}
+            <p class="text_delete">
+                Supprimer ce ticket ?
+                {{ object.title }}
+            </p>
+        </form>
+            <div class="content_btn">
+                <a href="{% url 'flux' %}">Annuler</a>
+                <button type="submit">Confirmer</button>
+            </div>
+    </div>
+
+{% endblock %}

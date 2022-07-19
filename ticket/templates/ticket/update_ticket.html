@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="content_modify">
+        <h2 class="title2">Modifier votre ticket</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% form_ticket%}
+            <button class="btn_valid" type="submit">Envoyer</button>
+        </form>
+    </div>
+
+{% endblock %}

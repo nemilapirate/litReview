@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <a class="btn_back" href="{% url 'flux' %}">Retour à l'accueil</a>
+    <h2 class="title2">Créer un ticket</h2>
+    <div class="content_form_ticket">
+        <form method="post" enctype="multipart/form-data">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input class="btn_valid" type="submit" value="Envoyer">
+        </form>
+    </div>
+{% endblock content %}

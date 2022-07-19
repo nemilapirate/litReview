@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+        <h2 class="title2">Salut {{ request.user }} ! </h2>
+        <nav class="content_main_navigation">
+                <li class="nav">
+                        <a href="{% url 'create_ticket' %}" class="btn_req">Demander une critique</a>
+                </li>
+                <li class="nav">
+                    <a href="{% url 'create_review' %}" class="btn_req">Créer une critique</a>
+                </li>
+        </nav>
+        <div class="main_content">
+                {# review #}
+                <div class="content_main_view">
+                        <h2 class="title2">Les dernières critiques</h2>
+                        {% for review in reviews %}
+                                {% include "flux/review_view.html" %}
+                        {% endfor %}
+                </div>
+                {# ticket #}
+                <div class="content_main_ticket">
+                        <h2 class="title2">Les dernières demande de critique</h2>
+                        {% for ticket in tickets %}
+                                {% include "flux/ticket_view.html" %}
+                        {% endfor %}
+                </div>
+        </div>
+
+{% endblock content %}

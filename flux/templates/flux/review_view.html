@@ -1,0 +1,24 @@
+<div class="content_review_view">
+    <h2 class="title2">{{ review.user }} a publié une critique</h2>
+    <p class="info_view">Le : {{ review.time_created }}</p>
+    <div class="content_info_review_view">
+        <h3 class="title3">{{ review.headline }}</h3>
+        <div class="content_rating_stars">
+            {% with ''|center:review.rating as range %}
+                {% for x in range %}
+                    <span class="stars"></span>
+                {% endfor %}
+            {% endwith %}
+        </div>
+        <div class="content_body_review_view">
+            <p class="info_view">{{ review.body }}</p>
+            {% include "flux/ticket_view.html" with ticket=review.ticket %}
+            {% if review.user.id == user.id %}
+        </div>
+        <div class="content_user_modification">
+            <button><a href="{% url 'update_review' review.id %}">Modifier</a></button>
+            <button><a href="{% url 'delete_review' review.id %}">Supprimer</a></button>
+        </div>
+
+    </div>
+</div>
