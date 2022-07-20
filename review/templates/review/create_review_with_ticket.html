@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="content_create_review">
-        <h1 class="title1">Répondre à une critique</h1>
+    <a class="btn_back" href="{% url 'flux' %}">Retour à l'accueil</a>
+    <h1 class="title1">Répondre à une critique</h1>
+    <div class="content_form">
         {% include "flux/ticket_view.html %}
         <h2 class="title2">Créer une critique</h2>
         <form  method="post" enctype="multipart/form-data">

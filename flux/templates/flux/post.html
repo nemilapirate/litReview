@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {#review#}
+    <h2 class="title2">Vos posts</h2>
+
+    <div class="main_content">
+
+        <div class="content_post_review">
+            <h3 class="title3">Votre dernière critique</h3>
+            {% for review in reviews %}
+                {% include "flux/review_view.html" %}
+            {% empty %}
+            <p class="info_post">Vous n'avez pas encore publié de critique</p>
+            <div class="create_review_post">
+                <p class="info_post">Créer votre première critique</p>
+                <button class="btn_valid">
+                    <a href="{% url 'create_review_with_ticket' %}">Créer une critique</a>
+                </button>
+            </div>
+        </div>
+
+        <div class="content_answer_ticket_post">
+            <h3 class="title3">Vos réponses à une demande de critique</h3>
+            {% for review in reviews %}
+                {% include "flux/ticket_view.html" %}
+            {% empty %}
+            <p class="info_post">Vous n'avez pas encore demandé de critique</p>
+            <div class="create_review_post">
+                <p class="info_post">Créer votre première demande de critique</p>
+                <button class="btn_valid">
+                    <a href="{% url 'create_ticket' %}">Créer un ticket</a>
+                </button>
+            </div>
+        </div>
+
+    </div>
+{% endblock content %}

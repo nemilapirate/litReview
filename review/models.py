@@ -14,6 +14,9 @@ CHOICES = (
 
 
 class Review(models.Model):
+    title_review = models.CharField(max_length=128, verbose_name='Titre : ')
+    description_review = models.TextField(max_length=8192, blank=True, verbose_name='Description')
+    image_review = models.ImageField(null=True, blank=True)
     rating = models.PositiveSmallIntegerField(
         validators=[
             MinValueValidator(0),

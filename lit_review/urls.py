@@ -30,6 +30,7 @@ urlpatterns = [
 
                 path('flux/', flux, name='flux'),
 
+
                 path('create_ticket/', CreateTicket.as_view(), name='create_ticket'),
                 path('update_ticket<int:pk>/', UpdateTicket.as_view(), name='update_ticket'),
                 path('delete_ticket<int:pk>', DeleteTicket.as_view(), name="delete_ticket"),
