@@ -56,7 +56,7 @@ label {
 }
 .liner {
     width: 100%;
-    height: 3px;
+    height: 2px;
     background-color: #708090;
 }
 .content_links {
@@ -72,7 +72,6 @@ label {
 }
 .btn_link:hover {
     font-weight: bold;
-    font-size: 1.3em;
 }
 /* ---------------------------------- CSS LOGIN.HTML ---------------------------------- */
 .content_login {

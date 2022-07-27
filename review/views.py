@@ -22,6 +22,8 @@ def review_create_view(request):
     elif request.method == 'POST':
         form_review = ReviewForm(data=request.POST, files=request.FILES)
         form_ticket = TicketForm(data=request.POST, files=request.FILES)
+
+        html = "review/create_review.html"
         context = {
             'form_review': form_review, 'form_ticket': form_ticket
         }
@@ -35,14 +37,14 @@ def review_create_view(request):
 
             return redirect('flux')
 
-        return render(request, context)
+        return render(request, html, context)
 
 
-def review_create_view_with_ticket(request, ticket_id):
+def review_create_view_answer_ticket(request, ticket_id):
     if request.method == 'GET':
         form_review = ReviewForm()
         ticket = get_object_or_404(Ticket, id=ticket_id)
-        html = 'review/create_review_with_ticket.html'
+        html = 'review/create_review_answer_ticket.html'
         context = {
             'form_review': form_review, 'ticket': ticket,
         }
@@ -51,7 +53,7 @@ def review_create_view_with_ticket(request, ticket_id):
     elif request.method == 'POST':
         form_review = ReviewForm(data=request.POST, files=request.FILES)
         ticket = get_object_or_404(Ticket, id=ticket_id)
-        html = 'review/create_review_with_ticket.html'
+        html = 'review/create_review_answer_ticket.html'
         context = {
             'form_review': form_review, 'ticket': ticket,
         }

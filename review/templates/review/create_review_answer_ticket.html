@@ -4,11 +4,11 @@
     <a class="btn_back" href="{% url 'flux' %}">Retour à l'accueil</a>
     <h1 class="title1">Répondre à une critique</h1>
     <div class="content_form">
-        {% include "flux/ticket_view.html %}
+        <div class="ticket_content_answer">
+            {% include "flux/ticket_view.html %}
+        </div>
         <h2 class="title2">Créer une critique</h2>
         <form  method="post" enctype="multipart/form-data">
-            <h3 class="title3">Article : </h3>
-            {{ review_form.as_p }}
             <h3 class="title3">Ma critique : </h3>
             {{ review_form.as_p }}
             {% csrf_token %}

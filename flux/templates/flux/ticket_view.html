@@ -1,34 +1,36 @@
-<div class="content_ticket_view">
-        <div class="content_review_ticket">
-        <div class="content_text_ticket">
-            {% if ticket.user.username == request.user.username %}
-            <p class="text_ticket">Vous avez demandé une critique</p>
-            {% else %}
-            <p class="text_ticket2">{{ticket.user}} a demandé une critique</p>
-        </div>
-        <div class="content_time_edit">
-            <span class="info_content">Le :  {{ticket.time_created}}</span>
-        </div>
-    </div>
 
-    <div class="content_info_ticket">
-        <h2 class="title2">{{ticket.title}}</h2>
-        <div class="content_description_ticket">
-            <p class="text_description_ticket">{{ticket.description}}</p>
-            {% if ticket.image != '' %}
-            <img src={{ticket.image.url}} alt="image de la demande de critique" height="300px">
-            {% endif %}
-            {% if not ticket.has_review %}
-            <div class="btn_answer_ticket">
-                <a href="{% url 'create_review' ticket_id %}" role="button">Créer une critique</a>
+
+    <div class="content_ticket_view">
+            <div class="content_review_ticket">
+                <div class="content_text_ticket">
+                    {% if ticket.user.username == request.user.username %}
+                    <p class="text_ticket">Vous avez demandé une critique</p>
+                    {% else %}
+                    <p class="text_ticket2">{{ticket.user}} a demandé une critique</p>
+                </div>
+            <div class="content_time_edit">
+                <span class="info_content">Le :  {{ticket.time_created}}</span>
             </div>
-            {% endif %}
-            {% if modify_ticket == True %}
-            <div class="content_modify_ticket">
-                <a class="btn_modify" href="{% url 'modify_ticket' ticket_id %}" role="button">Modifier</a>
-                <a class="btn_delete" href="{% url 'delete_ticket' ticket_id %}" role="button">Supprimer</a>
+        </div>
+
+        <div class="content_info_ticket">
+            <h2 class="title2">{{ticket.title}}</h2>
+            <div class="content_description_ticket">
+                <p class="text_description_ticket">{{ticket.description}}</p>
+                {% if ticket.image != '' %}
+                <img src={{ticket.image.url}} alt="image de la demande de critique" height="300px">
+                {% endif %}
+                {% if not ticket.has_review %}
+                <div class="btn_answer_ticket">
+                    <a href="{% url 'create_review' ticket_id %}" role="button">Créer une critique</a>
+                </div>
+                {% endif %}
+                {% if modify_ticket == True %}
+                <div class="content_modify_ticket">
+                    <a class="btn_modify" href="{% url 'modify_ticket' ticket_id %}" role="button">Modifier</a>
+                    <a class="btn_delete" href="{% url 'delete_ticket' ticket_id %}" role="button">Supprimer</a>
+                </div>
+                {% endif %}
             </div>
-            {% endif %}
         </div>
     </div>
-</div>

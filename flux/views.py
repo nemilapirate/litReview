@@ -19,3 +19,5 @@ def user_post(request):
         "ticket": Ticket.objects.filter(user=current_user)
     }
     return render(request, html, context)
+
+
