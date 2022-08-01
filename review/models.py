@@ -22,7 +22,7 @@ class Review(models.Model):
     user = models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
 
-class CreateReview(models.Model):
+class CreateReviewModel(models.Model):
     title = models.CharField(max_length=128, verbose_name='Titre')
     description = models.TextField(max_length=2048, blank=True, verbose_name='Description')
     user = models.ForeignKey(to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)

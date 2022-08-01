@@ -12,7 +12,7 @@ def review_create_view(request):
         create_review_form = CreateReviewForm()
         html = 'review/create_review.html'
         context = {
-            'form_review': create_review_form,
+            'create_review_form': create_review_form,
         }
         return render(request, html, context)
     elif request.method == 'POST':
@@ -20,7 +20,7 @@ def review_create_view(request):
 
         html = "review/create_review.html"
         context = {
-            'form_review': create_review_form,
+            'create_review_form': create_review_form,
         }
 
         if create_review_form.is_valid():

@@ -4,7 +4,7 @@ from . import models
 
 class CreateReviewForm(forms.ModelForm):
     class Meta:
-        model = models.CreateReview
+        model = models.CreateReviewModel
         fields = ['title', 'description', 'image', 'rating', 'body']
 
     def __init__(self, *args, **kwargs):
