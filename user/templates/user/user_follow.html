@@ -1,10 +1,11 @@
-{% extend 'base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block content %}
 
 <div class="main_content_user">
     {% if user.username == requested_user.username %}
     <h2 class="title2">Ton compte {{ user.username }}</h2>
+    {% endif %}
     <h3 class="title3">Suivre d'autres utilisateurs : </h3>
     <div class="content_search_user">
         <form method="post">

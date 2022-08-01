@@ -152,3 +152,11 @@ form {
     justify-content: center;
     text-align: center;
 }
+
+/* ---------------------------------- CSS POST.HTML ---------------------------------- */
+.main_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}

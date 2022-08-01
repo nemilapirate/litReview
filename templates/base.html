@@ -20,7 +20,7 @@
     {% if user.is_authenticated %}
         <div class="content_links">
         <a class="btn_link link_flux" href="{% url 'flux' %}" >Flux</a>
-        <a class="btn_link link_posts" href="% url 'post' %}" >Posts</a>
+        <a class="btn_link link_posts" href="{% url 'post' %}" >Posts</a>
         <a class="btn_link link_abo" href="{% url 'follow' %}" >Abonnements</a>
         <a class="btn_link link_logout" href="{% url 'logout' %}">Déconnexion</a>
         </div>

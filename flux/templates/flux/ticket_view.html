@@ -22,7 +22,7 @@
                 {% endif %}
                 {% if not ticket.has_review %}
                 <div class="btn_answer_ticket">
-                    <a href="{% url 'create_review' ticket_id %}" role="button">Créer une critique</a>
+                    <a href="{% url 'create_review_answer_ticket' ticket.pk %}" role="button">Créer une critique</a>
                 </div>
                 {% endif %}
                 {% if modify_ticket == True %}

@@ -2,38 +2,30 @@ from django.http import HttpResponseForbidden
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render, redirect
 
-from review.forms import ReviewForm
+from review.forms import ReviewForm, CreateReviewForm
 from review.models import Review
-from ticket.forms import TicketForm
 from ticket.models import Ticket
 
 
 def review_create_view(request):
     if request.method == 'GET':
-        form_review = ReviewForm()
-        form_ticket = TicketForm()
+        create_review_form = CreateReviewForm()
         html = 'review/create_review.html'
         context = {
-            'form_review': form_review,
-            'form_ticket': form_ticket
+            'form_review': create_review_form,
         }
         return render(request, html, context)
-
     elif request.method == 'POST':
-        form_review = ReviewForm(data=request.POST, files=request.FILES)
-        form_ticket = TicketForm(data=request.POST, files=request.FILES)
+        create_review_form = CreateReviewForm(data=request.POST, files=request.FILES)
 
         html = "review/create_review.html"
         context = {
-            'form_review': form_review, 'form_ticket': form_ticket
+            'form_review': create_review_form,
         }
 
-        if form_review.is_valid() and form_ticket.is_valid():
-            form_ticket.instance.user = request.user
-            ticket = form_ticket.save()
-            form_review.instance.ticket = ticket
-            form_review.instance.user = request.user
-            form_review.save()
+        if create_review_form.is_valid():
+            create_review_form.instance.user = request.user
+            create_review_form.save()
 
             return redirect('flux')
 
