@@ -5,7 +5,6 @@ from user.forms import UserFollowForm, UnfollowForm
 from user.models import UserFollowsModel
 
 
-# Create your views here.
 def follow_view(request):
     if request.method == 'GET':
         form_follows = UserFollowForm

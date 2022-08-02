@@ -2,14 +2,13 @@
 {% load static %}
 {% block content %}
 
+<div class="main_content">
 <div class="main_content_user">
-    {% if user.username == requested_user.username %}
     <h2 class="title2">Ton compte {{ user.username }}</h2>
-    {% endif %}
     <h3 class="title3">Suivre d'autres utilisateurs : </h3>
     <div class="content_search_user">
         <form method="post">
-            {{ search_form.as_p }}
+            {{ form_follows.as_p }}
             {% csrf_token %}
         </form>
         <div class="content_btn">
@@ -19,21 +18,20 @@
 
     <h3 class="title3">Abonnements</h3>
     <div class="content_user_follow">
-        {% for user_follow in user_follows %}
             <li class="user_follow_list">
-                {{ user_follow.followed_user }}
             </li>
-        {% endfor %}
+
     </div>
 
     <h3 class="title3">Abonnés</h3>
     <div class="content_follower">
-        {% for follower in followers %}
+
             <li class="user_followers_list">
                 {{ follower.user }}
             </li>
-        {% endfor %}
+
     </div>
+</div>
 </div>
 
 

@@ -16,10 +16,15 @@ body {
     font-size: 2em;
     text-align: center;
 }
+.title3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    text-align: center;
+}
 input {
     text-align: center;
     margin-bottom: 10px;
-    width: 300px;
+    width: auto;
     height: 35px;
     border-radius: 10px;
 }
@@ -88,13 +93,15 @@ label {
 .btn_valid {
     display: block;
     width: 120px;
+    height: 45px;
     border: 1px black solid;
     border-radius: 10px;
     font-weight: bold;
+    margin-top: 10px;
 }
 .content_signup {
     text-align: center;
-    margin-top: 15px;
+    margin-top: 30px;
 }
 /* ---------------------------------- CSS SIGNUP.HTML ---------------------------------- */
 .content_inscription {
@@ -159,4 +166,21 @@ form {
     flex-direction: column;
     align-items: center;
     text-align: center;
+}
+#id_rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* ---------------------------------- CSS USER_FOLLOW.HTML ---------------------------------- */
+.main_content_user {
+    width: 800px;
+    height: auto;
+}
+.create_review_post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0;
 }
