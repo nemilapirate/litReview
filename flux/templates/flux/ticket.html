@@ -7,6 +7,7 @@
                     <p class="text_ticket">Vous avez demandé une critique</p>
                     {% else %}
                     <p class="text_ticket2">{{ticket.user}} a demandé une critique</p>
+                    {% endif %}
                 </div>
             <div class="content_time_edit">
                 <span class="info_content">Le :  {{ticket.time_created}}</span>
